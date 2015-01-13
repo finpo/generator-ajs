@@ -25,7 +25,7 @@ Generator.prototype.createControllerFiles = function createControllerFiles() {
   );
 
   if(this.name == 'about'){
-    this.addTemplateScript(this.name);
+    //this.addTemplateScript(this.name);
   }
 
 
