@@ -21,7 +21,7 @@ var Generator = module.exports = function Generator(args, options) {
   });
   this.scriptAppName = this.appname + angularUtils.appName(this);
 
-  args = ['main','about'];
+  args = ['main'];
 
   if (typeof this.env.options.appPath === 'undefined') {
     try {
@@ -77,6 +77,9 @@ var Generator = module.exports = function Generator(args, options) {
 
   this.hookFor('angular-jade-stylus:controller', {
     args: args
+  });
+  this.hookFor('angular-jade-stylus:controller', {
+    args: ['about']
   });
 
 
@@ -256,7 +259,7 @@ Generator.prototype.appJs = function appJs() {
     html: this.indexFile,
     fileType: 'js',
     optimizedPath: 'scripts/scripts.js',
-    sourceFileList: ['scripts/app.js', 'scripts/controllers/main.js', 'scripts/controllers/about.js', 'scripts/controllers/contact.js'],
+    sourceFileList: ['scripts/app.js', 'scripts/controllers/main.js'],
     searchPath: ['.tmp', 'app']
   });
 };
