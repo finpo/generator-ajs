@@ -1,23 +1,26 @@
 doctype html
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7">
-<![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8">
-<![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9">
-<![endif]-->
-<!--[if gt IE 8]><!-->
-html.no-js
-<!--<![endif]-->
+
+html(lang="zh-Hant-TW",ng-app="<%= scriptAppName %>")
 head
+  meta(name="fragment",content="!")
+  base(href="/")
   meta(charset="utf-8")
   meta(http-equiv="X-UA-Compatible", content="IE=edge")
-  title
-  meta(name="description", content="")
-  meta(name="viewport", content="width=device-width")
-  // Place favicon.ico and apple-touch-icon.png in the root directory
+  title web
+  meta(name="keywords",content="")
+  meta(name="description",content="")
+  meta(name="viewport",content="width=device-width")
+  meta(property="og:type",content="website")
+  meta(property="og:url",content="")
+  meta(property="og:title",content="")
+  meta(property="og:site_name",content="")
+  meta(property="og:description",content="")
+  meta(property="og:image",content="")
+    
+  link(href="/apple-icon-114x114.png",rel="apple-touch-icon",sizes="114x114")
+  link(rel="shortcut icon",href="/favicon.ico")
+  
+  
   // build:css styles/vendor.css
   // bower:css
   // endbower
@@ -25,32 +28,25 @@ head
   // build:css(.tmp) styles/main.css
   link(rel="stylesheet", href="styles/main.css")
   // endbuild
-body(ng-app="<%= scriptAppName %>")
-  <!--[if lt IE 7]>
-  p.browsehappy
-    | You are using an 
-    strong outdated
-    |  browser. Please 
-    a(href="http://browsehappy.com/") upgrade your browser
-    |  to improve your experience.
-  <![endif]-->
-
-  // Add your site or application content here 
+body
+  
+  div.header
+    ul.nav.nav-pills.pull-right
+      li.active
+        a(ng-href="/") Home
+      li
+        a(ng-href="/about") About
+      li
+        a(ng-href="/contact") Contact
+        
+    h3.text-muted <%= appname %>
+    
   <% if (ngRoute) {%>
   div.container(ng-view)
   <% } else { %>
-  div.container(ng-include="'views/main.html'", ng-controller="MainCtrl")
+  div.container
   <% } %>
 
-  // Google Analytics: change UA-XXXXX-X to be your site's ID 
-  script.
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-XXXXX-X');
-    ga('send', 'pageview');
 
   <!--[if lt IE 9]>
   script(src="bower_components/es5-shim/es5-shim.js")
