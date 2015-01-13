@@ -21,7 +21,7 @@ var Generator = module.exports = function Generator(args, options) {
   });
   this.scriptAppName = this.appname + angularUtils.appName(this);
 
-  args = ['main','about','contact'];
+  args = ['main'];
 
   if (typeof this.env.options.appPath === 'undefined') {
     try {
@@ -256,7 +256,7 @@ Generator.prototype.appJs = function appJs() {
     html: this.indexFile,
     fileType: 'js',
     optimizedPath: 'scripts/scripts.js',
-    sourceFileList: ['scripts/app.js', 'scripts/controllers/main.js'],
+    sourceFileList: ['scripts/app.js', 'scripts/controllers/main.js', 'scripts/controllers/about.js', 'scripts/controllers/contact.js'],
     searchPath: ['.tmp', 'app']
   });
 };
