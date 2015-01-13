@@ -142,7 +142,7 @@ module.exports = function (grunt) {
         port: grunt.option('port') || 9000 ,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: '0.0.0.0',
-        livereload: 35729
+        livereload: grunt.option('port') ? grunt.option('port') > 9000 ? 35729+parseInt(grunt.option('port'))-9000 : 35729+Math.floor((Math.random() * 10) + 1) : 35729
       },
       livereload: {
         options: {
@@ -155,7 +155,7 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          port: 9001,
+          port: parseInt(grunt.option('port'))+1 || 9001,
           base: [
             '.tmp',
             'test',
