@@ -30,6 +30,7 @@ var Generator = module.exports = function Generator(args, options) {
     this.env.options.appPath = this.env.options.appPath || 'app';
   }
 
+  // force use jade and stylus
   this.env.options.jade = true ;
   this.env.options.stylus = true ;
 

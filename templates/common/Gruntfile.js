@@ -43,7 +43,7 @@ module.exports = function (grunt) {
         files: ['<%%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
-          livereload: true
+          livereload: '<%= connect.options.livereload %>'
         }
       },
       jsTest: {
@@ -139,9 +139,9 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9000,
+        port: grunt.option('port') || 9000 ,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
+        hostname: '0.0.0.0',
         livereload: 35729
       },
       livereload: {
@@ -273,9 +273,10 @@ module.exports = function (grunt) {
         files: {
           src: [
             '<%%= yeoman.dist %>/scripts/{,*/}*.js',
-            '<%%= yeoman.dist %>/styles/{,*/}*.css',
-            '<%%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-            '<%%= yeoman.dist %>/styles/fonts/*'
+            '<%%= yeoman.dist %>/styles/{,*/}*.css'
+            // ,
+            // '<%%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+            // '<%%= yeoman.dist %>/styles/fonts/*'
           ]
         }
       }
@@ -292,7 +293,7 @@ module.exports = function (grunt) {
         flow: {
           html: {
             steps: {
-              js: ['concat', 'uglifyjs'],
+              js: ['concat'], // 'uglifyjs'],
               css: ['cssmin']
             },
             post: {}
@@ -313,7 +314,8 @@ module.exports = function (grunt) {
     // The following *-min tasks produce minified files in the dist folder
     cssmin: {
       options: {
-        root: '<%%= yeoman.app %>'
+        //root: '<%%= yeoman.app %>'
+        root : ''
       }
     },
 
@@ -328,16 +330,16 @@ module.exports = function (grunt) {
       }
     },
 
-    svgmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%%= yeoman.app %>/images',
-          src: '{,*/}*.svg',
-          dest: '<%%= yeoman.dist %>/images'
-        }]
-      }
-    },
+    // svgmin: {
+    //   dist: {
+    //     files: [{
+    //       expand: true,
+    //       cwd: '<%%= yeoman.app %>/images',
+    //       src: '{,*/}*.svg',
+    //       dest: '<%%= yeoman.dist %>/images'
+    //     }]
+    //   }
+    // },
 
     htmlmin: {
       dist: {
@@ -390,7 +392,7 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html',
             'views/{,*/}*.html',
-            'images/{,*/}*.{webp}',
+            'images/{,*/}*',
             'fonts/*'
           ]
         }, {
@@ -423,8 +425,9 @@ module.exports = function (grunt) {
       ],
       dist: [<% if (!stylus) { %>
         'copy:styles',<% } %>
-        'imagemin',
-        'svgmin'
+        'imagemin'
+        //,
+        //'svgmin'
       ]
     },
 
@@ -525,7 +528,7 @@ module.exports = function (grunt) {
     'copy:dist',
     'cdnify',
     'cssmin',
-    'uglify',
+    //'uglify',
     'rev',
     'usemin',
     'htmlmin'
