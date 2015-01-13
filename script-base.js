@@ -50,7 +50,7 @@ var Generator = module.exports = function Generator() {
   this.env.options.jade = this.options.jade;
   if (typeof this.env.options.jade === 'undefined') {
     this.option('jade');
-    
+
     // attempt to detect if user is using CS or not
     // if cml arg provided, use that; else look for the existence of cs
     if (!this.options.jade &&
@@ -135,6 +135,23 @@ Generator.prototype.addScriptToIndex = function (script) {
   }
 };
 
+
+Generator.prototype.addTemplateScript = function (controller) {
+  try {
+    var fullPath = path.join(appPath, 'scripts/controllers/'+this.name);
+    angularUtils.rewriteFile({
+      file: fullPath,
+      needle: '});',
+      splicable: [
+          "$scope.aa = 'ddd';"
+      ]
+    });
+
+  } catch (e) {
+    console.log('\nUnable to find '.yellow + fullPath + '. Reference to '.yellow + script + '.js ' + 'not added.\n'.yellow);
+  }
+};
+
 Generator.prototype.generateSourceAndTest = function (appTemplate, testTemplate, targetDirectory, skipAdd) {
   // Services use classified names
   if (this.generatorName.toLowerCase() === 'service') {
@@ -147,4 +164,3 @@ Generator.prototype.generateSourceAndTest = function (appTemplate, testTemplate,
     this.addScriptToIndex(path.join(targetDirectory, this.name));
   }
 };
-  

@@ -78,8 +78,13 @@ var Generator = module.exports = function Generator(args, options) {
   this.hookFor('angular-jade-stylus:controller', {
     args: args
   });
+
   this.hookFor('angular-jade-stylus:controller', {
-    args: ['about','concact']
+    args: ['about']
+  });
+
+  this.hookFor('angular-jade-stylus:controller', {
+    args: ['concact']
   });
 
 

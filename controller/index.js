@@ -16,10 +16,14 @@ var Generator = module.exports = function Generator() {
 util.inherits(Generator, ScriptBase);
 
 Generator.prototype.createControllerFiles = function createControllerFiles() {
+  console.log('controllerNmae' , this.name) ;
+
   this.generateSourceAndTest(
     'controller',
     'spec/controller',
     'controllers',
     this.options['skip-add'] || false
   );
+
+
 };
