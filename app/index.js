@@ -21,7 +21,7 @@ var Generator = module.exports = function Generator(args, options) {
   });
   this.scriptAppName = this.appname + angularUtils.appName(this);
 
-  args = ['main'];
+  args = ['main','about','contact'];
 
   if (typeof this.env.options.appPath === 'undefined') {
     try {
@@ -189,8 +189,8 @@ Generator.prototype.askForModules = function askForModules() {
     this.sanitizeModule = hasMod('sanitizeModule');
     this.routeModule = hasMod('routeModule');
 
-    var angMods = ['angular-spinkit','ngDialog','angular-ladda'];
-    
+    var angMods = ["'angular-spinkit'","'ngDialog'","'angular-ladda'"];
+
 
     if (this.cookiesModule) {
       angMods.push("'ngCookies'");

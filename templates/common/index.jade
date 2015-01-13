@@ -29,23 +29,23 @@ head
   link(rel="stylesheet", href="styles/main.css")
   // endbuild
 body
-  
-  div.header
-    ul.nav.nav-pills.pull-right
-      li.active
-        a(ng-href="/") Home
-      li
-        a(ng-href="/about") About
-      li
-        a(ng-href="/contact") Contact
-        
-    h3.text-muted <%= appname %>
-    
-  <% if (ngRoute) {%>
-  div.container(ng-view)
-  <% } else { %>
-  div.container
-  <% } %>
+  .container
+    div.header
+      ul.nav.nav-pills.pull-right
+        li.active
+          a(ng-href="/") Home
+        li
+          a(ng-href="/about") About
+        li
+          a(ng-href="/contact") Contact
+          
+      h3.text-muted <%= appname %>
+      
+    <% if (ngRoute) {%>
+    div(ng-view)
+    <% } else { %>
+    div
+    <% } %>
 
 
   <!--[if lt IE 9]>
