@@ -79,7 +79,7 @@ var Generator = module.exports = function Generator(args, options) {
     args: args
   });
   this.hookFor('angular-jade-stylus:controller', {
-    args: ['about']
+    args: ['about','concact']
   });
 
 
