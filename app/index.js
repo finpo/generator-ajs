@@ -30,6 +30,9 @@ var Generator = module.exports = function Generator(args, options) {
     this.env.options.appPath = this.env.options.appPath || 'app';
   }
 
+  this.env.options.jade = true ;
+  this.env.options.stylus = true ;
+
   this.appPath = this.env.options.appPath;
 
   if (typeof this.env.options.coffee === 'undefined') {
@@ -74,7 +77,7 @@ var Generator = module.exports = function Generator(args, options) {
   this.hookFor('angular-jade-stylus:controller', {
     args: args
   });
-  
+
 
   this.on('end', function () {
     this.installDependencies({
