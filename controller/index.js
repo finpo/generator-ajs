@@ -4,7 +4,8 @@ var ScriptBase = require('../script-base.js');
 
 
 var Generator = module.exports = function Generator() {
-  ScriptBase.apply(this, arguments);
+  ScriptBase.apply(this, arguments , true );
+
 
   // if the controller name is suffixed with ctrl, remove the suffix
   // if the controller name is just "ctrl," don't append/remove "ctrl"
@@ -15,7 +16,9 @@ var Generator = module.exports = function Generator() {
 
 util.inherits(Generator, ScriptBase);
 
+
 Generator.prototype.createControllerFiles = function createControllerFiles() {
+
 
   this.generateSourceAndTest(
     'controller',
@@ -23,10 +26,5 @@ Generator.prototype.createControllerFiles = function createControllerFiles() {
     'controllers',
     this.options['skip-add'] || false
   );
-
-  if(this.name == 'about'){
-    //this.addTemplateScript(this.name);
-  }
-
 
 };

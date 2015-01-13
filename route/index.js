@@ -7,8 +7,12 @@ var angularUtils = require('../util.js');
 
 
 var Generator = module.exports = function Generator() {
+
   ScriptBase.apply(this, arguments);
-  this.hookFor('angular-jade-stylus:controller');
+
+  this.hookFor('angular-jade-stylus:controller', {
+    args: [this.name , 'addRoute']
+  });
   this.hookFor('angular-jade-stylus:view');
 };
 

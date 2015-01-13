@@ -1,11 +1,11 @@
-div
+div(ng-show="ajaxReady")
+  br
+  br
   p This is the <%= name %> view.
+  <% if( name == 'contact'){ %>
+  taiwan-address-input(address="address")
+  <% } %>
   
   
-//- loading div  
-.spinner
-  .rect1
-  .rect2
-  .rect3
-  .rect4
-  .rect5
+//- loading div
+wave-spinner(ng-hide="ajaxReady")

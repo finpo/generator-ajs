@@ -7,6 +7,8 @@
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
+var modRewrite = require('connect-modrewrite');
+
 module.exports = function (grunt) {
 
   // Load grunt tasks automatically
@@ -139,6 +141,11 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
+        middleware: function (connect, options) {
+          var optBase = (typeof options.base === 'string') ? [options.base] : options.base;
+          return [require('connect-modrewrite')(['!(\\..+)$ / [L]'])].concat(
+            optBase.map(function(path){ return connect.static(path); }));
+          },
         port: grunt.option('port') || 9000 ,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: '0.0.0.0',
@@ -449,15 +456,15 @@ module.exports = function (grunt) {
     //     }
     //   }
     // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
+    uglify: {
+      dist: {
+        files: {
+          '<%%= yeoman.dist %>/scripts/vendor.js': [
+            '<%%= yeoman.dist %>/scripts/vendor.js'
+          ]
+        }
+      }
+    },
     // concat: {
     //   dist: {}
     // },
@@ -533,7 +540,7 @@ module.exports = function (grunt) {
     'copy:dist',
     'cdnify',
     'cssmin',
-    //'uglify',
+    'uglify',
     'rev',
     'usemin',
     'htmlmin'

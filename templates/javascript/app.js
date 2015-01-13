@@ -1,5 +1,7 @@
 'use strict';
 
+window.prerenderReady = false;
+
 angular
   .module('<%= scriptAppName %>', [<%= angularModules %>])<% if (ngRoute) { %>
   .config(function ($routeProvider,$locationProvider) {
@@ -7,14 +9,6 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/contact', {
-        templateUrl: 'views/contact.html',
-        controller: 'ContactCtrl'
       })
       .otherwise({
         redirectTo: '/'
@@ -26,5 +20,7 @@ angular
     $rootScope.getNgViewScope = function(){
       return (angular.element('div[ng-view]').scope()) ? angular.element('div[ng-view]').scope() : {} ;
     };
+
+    $rootScope.title = '<%= appname %>' ;
 
   });

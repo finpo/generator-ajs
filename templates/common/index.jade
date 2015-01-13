@@ -1,18 +1,28 @@
 doctype html
 
+<!--[if lte IE 8]>
+script.
+  location.assign('ie8.html');
+
+<![endif]-->
+
+<!--[if IE 9]>
+html.ie9(lang="zh-Hant-TW",ng-app="<%= scriptAppName %>")
+<![endif]-->
+
 html(lang="zh-Hant-TW",ng-app="<%= scriptAppName %>")
 head
   meta(name="fragment",content="!")
   base(href="/")
   meta(charset="utf-8")
   meta(http-equiv="X-UA-Compatible", content="IE=edge")
-  title web
+  title(ng-bind="(getNgViewScope().subTitle) ? title + ' - '+ getNgViewScope().subTitle : title") <%= appname %>
   meta(name="keywords",content="")
   meta(name="description",content="")
   meta(name="viewport",content="width=device-width")
   meta(property="og:type",content="website")
   meta(property="og:url",content="")
-  meta(property="og:title",content="")
+  meta(property="og:title",content="{{title}}")
   meta(property="og:site_name",content="")
   meta(property="og:description",content="")
   meta(property="og:image",content="")
@@ -32,11 +42,11 @@ body
   .container
     div.header
       ul.nav.nav-pills.pull-right
-        li.active
+        li(ng-class="{active: getNgViewScope().activeView == 'main' }")
           a(ng-href="/") Home
-        li
+        li(ng-class="{active: getNgViewScope().activeView == 'about' }")
           a(ng-href="/about") About
-        li
+        li(ng-class="{active: getNgViewScope().activeView == 'contact' }")
           a(ng-href="/contact") Contact
           
       h3.text-muted <%= appname %>
@@ -51,12 +61,15 @@ body
   <!--[if lt IE 9]>
   script(src="bower_components/es5-shim/es5-shim.js")
   script(src="bower_components/json3/lib/json3.min.js")
+  
   <![endif]-->
-
+  
+  
   // build:js scripts/vendor.js 
   // bower:js
   // endbower 
   // endbuild 
 
   // build:js({.tmp,app}) scripts/main.js 
+  script(src="scripts/tools/taiwan-address-input.js")
   // endbuild

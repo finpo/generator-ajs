@@ -75,16 +75,16 @@ var Generator = module.exports = function Generator(args, options) {
     args: args
   });
 
-  this.hookFor('angular-jade-stylus:controller', {
-    args: args
+  this.hookFor('angular-jade-stylus:route', {
+    args: ['main']
   });
 
-  this.hookFor('angular-jade-stylus:controller', {
+  this.hookFor('angular-jade-stylus:route', {
     args: ['about']
   });
 
-  this.hookFor('angular-jade-stylus:controller', {
-    args: ['concact']
+  this.hookFor('angular-jade-stylus:route', {
+    args: ['contact']
   });
 
 
@@ -197,7 +197,7 @@ Generator.prototype.askForModules = function askForModules() {
     this.sanitizeModule = hasMod('sanitizeModule');
     this.routeModule = hasMod('routeModule');
 
-    var angMods = ["'angular-spinkit'","'ngDialog'","'angular-ladda'"];
+    var angMods = ["'angular-spinkit'","'ngDialog'","'angular-ladda'","'taiwan-address-input'","'ngMessages'"];
 
 
     if (this.cookiesModule) {

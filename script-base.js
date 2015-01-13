@@ -19,6 +19,8 @@ var Generator = module.exports = function Generator() {
   this.cameledName = this._.camelize(this.name);
   this.classedName = this._.classify(this.name);
 
+  this.activeView = (this.args[1] == 'addRoute') ? this.name : '' ;
+
   if (typeof this.env.options.appPath === 'undefined') {
     try {
       this.env.options.appPath = require(path.join(process.cwd(), 'bower.json')).appPath;
@@ -75,6 +77,9 @@ var Generator = module.exports = function Generator() {
 util.inherits(Generator, yeoman.generators.NamedBase);
 
 Generator.prototype.appTemplate = function (src, dest) {
+
+
+
   yeoman.generators.Base.prototype.template.apply(this, [
     src + this.scriptSuffix,
     path.join(this.env.options.appPath, dest.toLowerCase()) + this.scriptSuffix
@@ -154,6 +159,7 @@ Generator.prototype.addTemplateScript = function (controller) {
 
 Generator.prototype.generateSourceAndTest = function (appTemplate, testTemplate, targetDirectory, skipAdd) {
   // Services use classified names
+  //console.log(this);
   if (this.generatorName.toLowerCase() === 'service') {
     this.cameledName = this.classedName;
   }
