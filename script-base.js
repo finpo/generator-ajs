@@ -138,7 +138,7 @@ Generator.prototype.addScriptToIndex = function (script) {
 
 Generator.prototype.addTemplateScript = function (controller) {
   try {
-    var fullPath = path.join(appPath, 'scripts/controllers/'+this.name);
+    var fullPath = path.join(appPath, 'scripts/controllers/'+controller+'.js');
     angularUtils.rewriteFile({
       file: fullPath,
       needle: '});',
