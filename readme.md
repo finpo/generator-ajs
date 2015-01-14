@@ -1,9 +1,11 @@
 # Yeoman generator with AngularJS and Jade and Stylus (force)
 
-> Yeoman generator for AngularJS - lets you quickly set up a project with sensible defaults and best practises.
+> Yeoman generator for AngularJS website - lets you quickly set up a project with sensible defaults and best practises.
 
-## note : this version will force use Jade and Stylus , and not support coffeeScript .
-## note : and will not publish to npm center please use github install or npm link .
+## this version will force use Jade and Stylus , and not support coffeeScript .
+## this project will not publish to npm center please use github install or npm link .
+## it's use angular 1.3.8 , so this project not support IE 8 (under) .
+## IE 9 you should not use crossdomain api server , if crossdomin you need install XDomain .
 
 ## Usage
 
@@ -55,18 +57,18 @@ you will find production code in dist folder
 
 Available generators:
 
-* [angular-jade-stylus](#app) (aka [angular-jade-stylus:app](#app))
-* [angular-jade-stylus:controller](#controller)
-* [angular-jade-stylus:directive](#directive)
-* [angular-jade-stylus:filter](#filter)
-* [angular-jade-stylus:route](#route)
-* [angular-jade-stylus:service](#service)
-* [angular-jade-stylus:provider](#service)
-* [angular-jade-stylus:factory](#service)
-* [angular-jade-stylus:value](#service)
-* [angular-jade-stylus:constant](#service)
-* [angular-jade-stylus:decorator](#decorator)
-* [angular-jade-stylus:view](#view)
+* [ajs](#app) (aka [ajs:app](#app))
+* [ajs:controller](#controller)
+* [ajs:directive](#directive)
+* [ajs:filter](#filter)
+* [ajs:route](#route)
+* [ajs:service](#service)
+* [ajs:provider](#service)
+* [ajs:factory](#service)
+* [ajs:value](#service)
+* [ajs:constant](#service)
+* [ajs:decorator](#decorator)
+* [ajs:view](#view)
 
 **Note: Generators are to be run from the root directory of your app.**
 
@@ -75,7 +77,7 @@ Sets up a new AngularJS app, generating all the boilerplate you need to get star
 
 Example:
 ```bash
-yo angular-jade-stylus
+yo ajs
 ```
 
 ### Route
@@ -83,7 +85,7 @@ Generates a controller and view, and configures a route in `app/scripts/app.js` 
 
 Example:
 ```bash
-yo angular-jade-stylus:route myroute
+yo ajs:route myroute
 ```
 
 Produces `app/scripts/controllers/myroute.js`:
@@ -103,7 +105,7 @@ Generates a controller in `app/scripts/controllers`.
 
 Example:
 ```bash
-yo angular-jade-stylus:controller user
+yo ajs:controller user
 ```
 
 Produces `app/scripts/controllers/user.js`:
@@ -117,7 +119,7 @@ Generates a directive in `app/scripts/directives`.
 
 Example:
 ```bash
-yo angular-jade-stylus:directive myDirective
+yo ajs:directive myDirective
 ```
 
 Produces `app/scripts/directives/myDirective.js`:
@@ -138,7 +140,7 @@ Generates a filter in `app/scripts/filters`.
 
 Example:
 ```bash
-yo angular-jade-stylus:filter myFilter
+yo ajs:filter myFilter
 ```
 
 Produces `app/scripts/filters/myFilter.js`:
@@ -155,7 +157,7 @@ Generates an HTML view file in `app/views`.
 
 Example:
 ```bash
-yo angular-jade-stylus:view user
+yo ajs:view user
 ```
 
 Produces `app/views/user.html`:
@@ -168,7 +170,7 @@ Generates an AngularJS service.
 
 Example:
 ```bash
-yo angular-jade-stylus:service myService
+yo ajs:service myService
 ```
 
 Produces `app/scripts/services/myService.js`:
@@ -178,14 +180,14 @@ angular.module('myMod').service('myService', function () {
 });
 ```
 
-You can also do `yo angular-jade-stylus:factory`, `yo angular-jade-stylus:provider`, `yo angular-jade-stylus:value`, and `yo angular-jade-stylus:constant` for other types of services.
+You can also do `yo ajs:factory`, `yo ajs:provider`, `yo ajs:value`, and `yo ajs:constant` for other types of services.
 
 ### Decorator
 Generates an AngularJS service decorator.
 
 Example:
 ```bash
-yo angular-jade-stylus:decorator serviceName
+yo ajs:decorator serviceName
 ```
 
 Produces `app/scripts/decorators/serviceNameDecorator.js`:
@@ -206,7 +208,7 @@ For generators that output scripts, the `--coffee` option will output CoffeeScri
 
 For example:
 ```bash
-yo angular-jade-stylus:controller user --coffee
+yo ajs:controller user --coffee
 ```
 
 Produces `app/scripts/controller/user.coffee`:
@@ -256,7 +258,7 @@ By default, new scripts are added to the index.html file. However, this may not 
 
 To skip adding them to the index, pass in the skip-add argument:
 ```bash
-yo angular-jade-stylus:service serviceName --skip-add
+yo ajs:service serviceName --skip-add
 ```
 
 ## Bower Components
