@@ -1,4 +1,17 @@
-<a name="0.8.7"></a>
+<a name="0.8.8"></a>
+
+## 0.8.8 (2015-01-14)
+
+* rewirte by Ausir Lo
+* change project name , angular-jade-stylus to ajs
+* force use jade and stylus ( coffee script can't use anymore )
+* add ie8 redirect
+* add #! hash bang and html5mode
+* add route.scope.verb
+* add dyn meta data
+* add preloading animation and prerenderReady for prerender.io
+* fix grunt build bug ( make few change )
+
 ## 0.8.7 (2014-04-27)
 
 #### Bug Fixes

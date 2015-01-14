@@ -12,10 +12,10 @@ angular.module('<%= scriptAppName %>')
 
     var ajax = [];
 
-    ajax.push($http.get('http://dev.finpo.com.tw/markchao-api/public/f/forum/9/38').success(function(){
+    ajax.push($http.get('http://api.markchao.org/f/forum/9/38').success(function(){
       console.log('success first');
     }));
-    ajax.push($http.get('http://dev.finpo.com.tw/markchao-api/public/f/forum/9/38').success(function(){
+    ajax.push($http.get('http://api.markchao.org/f/forum/9/38').success(function(){
       console.log('success second');
     }));
 

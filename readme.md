@@ -1,13 +1,31 @@
-# AngularJS generator with Jade and Stylus 
+# Yeoman generator with AngularJS and Jade and Stylus (force)
 
 > Yeoman generator for AngularJS - lets you quickly set up a project with sensible defaults and best practises.
 
+## note : this version will force use Jade and Stylus , and not support coffeeScript .
+## note : and will not publish to npm center please use github install or npm link .
 
 ## Usage
 
-Install `generator-angular`:
+Install `generator-ajs`:
 ```
-npm install -g generator-angular-jade-stylus
+npm install -g git+https://github.com/ausir0726/generator-ajs.git
+```
+
+or download this project and unzip :
+```
+git clone https://github.com/ausir0726/generator-ajs.git
+cd generator-ajs
+npm link
+```
+
+if you want remove this generator
+```
+for npm install
+npm uninstall -g generator-ajs
+
+for npm link
+sudo npm rm --global generator-ajs
 ```
 
 Make a new directory, and `cd` into it:
@@ -15,14 +33,22 @@ Make a new directory, and `cd` into it:
 mkdir my-new-project && cd $_
 ```
 
-Run `yo angular`, optionally passing an app name:
+Run `yo ajs`, optionally passing an app name:
 ```
-yo angular-jade-stylus --coffee --jade --stylus [app-name]
+yo ajs
 ```
 
-> You should add --jade and --stylus to enable jade / stylus template
+Run `grunt serve` for preview
 
-Run `grunt` for building and `grunt serve` for preview
+if you want run 2 project you can set port
+
+Run `grunt serve --port=9002` for use custom port ( port >= 9000 is better )
+
+Run `grunt build` for build production code
+
+you will find production code in dist folder
+
+## note : we will minify vendor js , if have any error , you can modify grunt file to disable .
 
 
 ## Generators
