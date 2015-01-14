@@ -10,10 +10,10 @@ var Generator = module.exports = function Generator() {
 
   ScriptBase.apply(this, arguments);
 
-  this.hookFor('angular-jade-stylus:controller', {
+  this.hookFor('ajs:controller', {
     args: [this.name , 'addRoute']
   });
-  this.hookFor('angular-jade-stylus:view');
+  this.hookFor('ajs:view');
 };
 
 util.inherits(Generator, ScriptBase);

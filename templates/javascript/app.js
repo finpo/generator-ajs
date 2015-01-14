@@ -16,11 +16,13 @@ angular
 
       $locationProvider.html5Mode(true).hashPrefix('!');
   })<% } %>
-  .run(function($rootScope){
-    $rootScope.getNgViewScope = function(){
-      return (angular.element('div[ng-view]').scope()) ? angular.element('div[ng-view]').scope() : {} ;
-    };
+  .run(function($rootScope,$route,$location){
+    $rootScope.$route = $route ;
+    $rootScope.$location = $location ;
 
     $rootScope.title = '<%= appname %>' ;
+    $rootScope.keywords = '<%= appname %>' ;
+    $rootScope.description = '<%= appname %>' ;
+    $rootScope.og_image = 'og-image-200x200.png' ; //200x200
 
   });

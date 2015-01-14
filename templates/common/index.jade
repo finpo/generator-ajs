@@ -16,16 +16,16 @@ head
   base(href="/")
   meta(charset="utf-8")
   meta(http-equiv="X-UA-Compatible", content="IE=edge")
-  title(ng-bind="(getNgViewScope().subTitle) ? title + ' - '+ getNgViewScope().subTitle : title") <%= appname %>
-  meta(name="keywords",content="")
-  meta(name="description",content="")
+  title(ng-bind="($route.current.scope.subTitle) ? title + ' - '+ $route.current.scope.subTitle : title") <%= appname %>
+  meta(name="keywords",ng-attr-content="{{($route.current.scope.page_keywords) ? page_keywords : keywords }}",content="<%= appname %>")
+  meta(name="description",ng-attr-content="{{($route.current.scope.page_description) ? page_description : description }}",content="<%= appname %>")
   meta(name="viewport",content="width=device-width")
   meta(property="og:type",content="website")
-  meta(property="og:url",content="")
-  meta(property="og:title",content="{{title}}")
-  meta(property="og:site_name",content="")
-  meta(property="og:description",content="")
-  meta(property="og:image",content="")
+  meta(property="og:url",ng-attr-content="{{$location.$$absUrl}}")
+  meta(property="og:title",ng-attr-content="{{($route.current.scope.subTitle) ? title + ' - '+ $route.current.scope.subTitle : title}}",content="<%= appname %>")
+  meta(property="og:site_name",ng-attr-content="{{title}}",content="<%= appname %>")
+  meta(property="og:description",ng-attr-content="{{($route.current.scope.page_description) ? page_description : description }}",content="<%= appname %>")
+  meta(property="og:image",ng-attr-content="{{($route.current.scope.page_og_image) ? page_og_image : og_image}}",content="og-image-200x200.png")
     
   link(href="/apple-icon-114x114.png",rel="apple-touch-icon",sizes="114x114")
   link(rel="shortcut icon",href="/favicon.ico")
@@ -42,11 +42,11 @@ body
   .container
     div.header
       ul.nav.nav-pills.pull-right
-        li(ng-class="{active: getNgViewScope().activeView == 'main' }")
+        li(ng-class="{active: $route.current.scope.activeView == 'main' }")
           a(ng-href="/") Home
-        li(ng-class="{active: getNgViewScope().activeView == 'about' }")
+        li(ng-class="{active: $route.current.scope.activeView == 'about' }")
           a(ng-href="/about") About
-        li(ng-class="{active: getNgViewScope().activeView == 'contact' }")
+        li(ng-class="{active: $route.current.scope.activeView == 'contact' }")
           a(ng-href="/contact") Contact
           
       h3.text-muted <%= appname %>

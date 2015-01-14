@@ -5,6 +5,10 @@ angular.module('<%= scriptAppName %>')
     <% if( activeView ){ %>
     $scope.activeView = '<%= activeView %>';
     $scope.subTitle = '<%= activeView %>';
+    $scope.page_keywords = '' ;
+    $scope.page_description = '' ;
+    $scope.page_og_image = '';
+
 
     var ajax = [];
 

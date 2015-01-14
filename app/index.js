@@ -67,23 +67,23 @@ var Generator = module.exports = function Generator(args, options) {
     this.env.options.jade = this.options.jade;
   }
 
-  this.hookFor('angular-jade-stylus:common', {
+  this.hookFor('ajs:common', {
     args: args
   });
 
-  this.hookFor('angular-jade-stylus:main', {
+  this.hookFor('ajs:main', {
     args: args
   });
 
-  this.hookFor('angular-jade-stylus:route', {
+  this.hookFor('ajs:route', {
     args: ['main']
   });
 
-  this.hookFor('angular-jade-stylus:route', {
+  this.hookFor('ajs:route', {
     args: ['about']
   });
 
-  this.hookFor('angular-jade-stylus:route', {
+  this.hookFor('ajs:route', {
     args: ['contact']
   });
 
