@@ -203,23 +203,6 @@ angular.module('myMod').config(function ($provide) {
 ## Options
 In general, these options can be applied to any generator, though they only affect generators that produce scripts.
 
-### CoffeeScript
-For generators that output scripts, the `--coffee` option will output CoffeeScript instead of JavaScript.
-
-For example:
-```bash
-yo ajs:controller user --coffee
-```
-
-Produces `app/scripts/controller/user.coffee`:
-```coffeescript
-angular.module('myMod')
-  .controller 'UserCtrl', ($scope) ->
-```
-
-A project can mix CoffeScript and JavaScript files.
-
-To output JavaScript files, even if CoffeeScript files exist (the default is to output CoffeeScript files if the generator finds any in the project), use `--coffee=false`.
 
 ### Minification Safe
 
