@@ -14,7 +14,9 @@
     "sweetalert": ">=0.3.3",
     "font-awsome": ">=4.2.0",
     "angular-spinkit": ">=0.3.3",
-    "angular-messages" : ">=1.3.8"
+    "angular-messages" : ">=1.3.8",
+    "checklist-model" : ">=0.1.3",
+    "angular-mask" : ">=3.0.8"
 
     <% if (resourceModule) { %>,
     "angular-resource": ">=1.3.8"<% } %>

@@ -197,7 +197,7 @@ Generator.prototype.askForModules = function askForModules() {
     this.sanitizeModule = hasMod('sanitizeModule');
     this.routeModule = hasMod('routeModule');
 
-    var angMods = ["'angular-spinkit'","'ngDialog'","'angular-ladda'","'taiwan-address-input'","'ngMessages'"];
+    var angMods = ["'angular-spinkit'","'ngDialog'","'angular-ladda'","'taiwan-address-input'","'ngMessages'","'ngMask'","'checklist-model'"];
 
 
     if (this.cookiesModule) {
