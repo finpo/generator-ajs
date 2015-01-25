@@ -1,0 +1,41 @@
+
+div
+  label 登入
+  div
+    label 帳號
+    input(type="email",ng-model="signInData.email")
+    label 密碼
+    input(type="password",ng-model="signInData.password")
+    button(ng-click="signIn()") 登入
+
+div
+  label 註冊
+  div
+    label 帳號
+    input(type="email",ng-model="signUpData.email")
+    label 密碼
+    input(type="password",ng-model="signUpData.password")
+    button(ng-click="signUp()") 註冊
+    
+  
+div
+  span ---- 或使用以下服務登入 ----
+  
+div
+  ul
+    li.btn(ng-click="thirdPartySignIn('facebook')")
+      a
+        i.fa.fa-facebook
+        span facebook
+    li.btn(ng-click="thirdPartySignIn('google')")
+      a
+        i.fa.fa-google
+        span google
+    li.btn(ng-click="thirdPartySignIn('yahoo')")
+      a
+        i.fa.fa-yahoo
+        span yahoo
+    li.btn(ng-click="thirdPartySignIn('windowslive')")
+      a
+        i.fa.fa-windows
+        span windows

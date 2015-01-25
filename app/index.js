@@ -87,6 +87,14 @@ var Generator = module.exports = function Generator(args, options) {
     args: ['contact']
   });
 
+  this.hookFor('ajs:route', {
+    args: ['signin']
+  });
+
+  this.hookFor('ajs:value', {
+    args: ['config']
+  });
+
 
   this.on('end', function () {
     this.installDependencies({
@@ -197,7 +205,7 @@ Generator.prototype.askForModules = function askForModules() {
     this.sanitizeModule = hasMod('sanitizeModule');
     this.routeModule = hasMod('routeModule');
 
-    var angMods = ["'angular-spinkit'","'ngDialog'","'angular-ladda'","'taiwan-address-input'","'ngMessages'","'ngMask'","'checklist-model'"];
+    var angMods = ["'angular-spinkit'","'ngDialog'","'angular-ladda'","'taiwan-address-input'","'ngMessages'","'ngMask'","'checklist-model'","'signin'"];
 
 
     if (this.cookiesModule) {

@@ -48,6 +48,8 @@ body
           a(ng-href="/about") About
         li(ng-class="{active: $route.current.scope.activeView == 'contact' }")
           a(ng-href="/contact") Contact
+        li(ng-class="{active: $route.current.scope.activeView == 'signin' }")
+          a(ng-href="/signin") Signin
           
       h3.text-muted <%= appname %>
       
@@ -72,4 +74,6 @@ body
 
   // build:js({.tmp,app}) scripts/main.js 
   script(src="scripts/tools/taiwan-address-input.js")
+  script(src="scripts/directives/signin.js")
+  
   // endbuild
