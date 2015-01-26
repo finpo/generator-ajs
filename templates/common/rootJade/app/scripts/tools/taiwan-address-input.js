@@ -123,7 +123,6 @@
 
         $scope.$watch('address', function(newValue, oldValue) {
           $scope.cities = [];
-          console.log('watch');
           angular.forEach($scope.postcode, function(value, key) {
             $scope.cities.push(key);
           });
