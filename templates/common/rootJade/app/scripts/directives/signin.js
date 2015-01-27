@@ -69,7 +69,6 @@ angular.module('signin',[])
             }
           }
           $scope.fbInterval = $interval(function(){
-            console.log('beep');
             if($scope.popup.closed){
               $interval.cancel($scope.fbInterval);
               window.removeEventListener("message", receiveMessage, false);
