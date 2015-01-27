@@ -18,7 +18,7 @@ angular
         redirectTo: '/'
       });
 
-      $locationProvider.html5Mode(true).hashPrefix('!');
+    $locationProvider.html5Mode(true).hashPrefix('!');
   })<% } %>
   .run(function($rootScope,$route,$location){
     $rootScope.$route = $route ;
