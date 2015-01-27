@@ -7,7 +7,6 @@
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
-var modRewrite = require('connect-modrewrite');
 
 module.exports = function (grunt) {
 
@@ -63,7 +62,7 @@ module.exports = function (grunt) {
       jade: {
         files: ['<%%= yeoman.app %>/views/{,*/}*.jade', '<%%= yeoman.app %>/*.jade'],
         tasks: ['bowerInstall', 'jade:server']
-      }, <% } %>
+      },<% } %>
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -145,7 +144,7 @@ module.exports = function (grunt) {
           var optBase = (typeof options.base === 'string') ? [options.base] : options.base;
           return [require('connect-modrewrite')(['!(\\..+)$ / [L]'])].concat(
             optBase.map(function(path){ return connect.static(path); }));
-          },
+        },
         port: grunt.option('port') || 9000 ,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: '0.0.0.0',
