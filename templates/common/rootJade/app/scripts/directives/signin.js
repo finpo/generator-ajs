@@ -15,7 +15,7 @@ angular.module('signin',[])
 
         $scope.signUp = function(){
           $http.post(APIURL+'/f/auth/signup',$scope.signUpData).success(function(res){
-            $http.post(APIURL+'/f/auth/signin',$scope.signInData).success(function(res){
+            $http.post(APIURL+'/f/auth/signin',$scope.signUpData).success(function(res){
               $scope.pass(res.token);
             }).error(function(res){
               swal('ERROR','發生錯誤了.. 請檢查您填寫的資料，或服務主機發生問題','error');
