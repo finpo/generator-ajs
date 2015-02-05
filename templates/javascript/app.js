@@ -1,7 +1,7 @@
 'use strict';
 
 if(!window.console){
-  window.console = { log : function(){} } ;
+  window.console = { log : function(a,b,c,d,e,f,g,h,i){} } ;
 }
 
 window.prerenderReady = false;
