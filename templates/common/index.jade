@@ -43,13 +43,13 @@ body
     div.header
       ul.nav.nav-pills.pull-right
         li(ng-class="{active: $route.current.scope.activeView == 'main' }")
-          a(ng-href="/") Home
+          a(ng-href="./") Home
         li(ng-class="{active: $route.current.scope.activeView == 'about' }")
-          a(ng-href="/about") About
+          a(ng-href="./about") About
         li(ng-class="{active: $route.current.scope.activeView == 'contact' }")
-          a(ng-href="/contact") Contact
+          a(ng-href="./contact") Contact
         li(ng-class="{active: $route.current.scope.activeView == 'signin' }")
-          a(ng-href="/signin") Signin
+          a(ng-href="./signin") Signin
           
       h3.text-muted <%= appname %>
       
