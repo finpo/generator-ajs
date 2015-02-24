@@ -21,6 +21,7 @@ angular
     $locationProvider.html5Mode(true).hashPrefix('!');
   })<% } %>
   .run(function($rootScope,$route,$location){
+    $rootScope.ajax = [] ;
     $rootScope.$route = $route ;
     $rootScope.$location = $location ;
 
@@ -28,5 +29,10 @@ angular
     $rootScope.keywords = '<%= appname %>' ;
     $rootScope.description = '<%= appname %>' ;
     $rootScope.og_image = 'og-image-200x200.png' ; //200x200
+
+    /*
+    push service to ajax array
+    $scope.ajax.push( Site.getProduct().success(function(res){ }).error(function(err){  }) );
+    */
 
   });

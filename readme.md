@@ -11,13 +11,13 @@
 
 Install `generator-ajs`:
 ```
-npm install -g git+https://github.com/ausir0726/generator-ajs.git
+npm install -g git+https://github.com/finpo/generator-ajs.git
 ```
 
 
 or download this project and unzip :
 ```
-git clone https://github.com/ausir0726/generator-ajs.git
+git clone https://github.com/finpo/generator-ajs.git
 cd generator-ajs
 npm link
 ```
