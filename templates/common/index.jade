@@ -54,11 +54,15 @@ body
       h3.text-muted <%= appname %>
       
     <% if (ngRoute) {%>
-    div(ng-view)
+    div
+      //- loading div
+      div.ajax-overlay(ng-hide="$route.current.scope.ajaxReady")
+        wave-spinner
+      div(ng-view)
     <% } else { %>
     div
     <% } %>
-
+  
 
   <!--[if lt IE 9]>
   script(src="bower_components/es5-shim/es5-shim.js")
