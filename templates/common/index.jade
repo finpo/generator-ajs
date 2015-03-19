@@ -14,6 +14,13 @@ html(lang="zh-Hant-TW",ng-app="<%= scriptAppName %>")
 head
   meta(name="fragment",content="!")
   base(href="/")
+  <!--[if IE]>
+  script(type="text/javascript").
+    (function() {
+      var baseTag = document.getElementsByTagName('base')[0];
+      baseTag.href = baseTag.href;
+    })();
+  <![endif]--> 
   meta(charset="utf-8")
   meta(http-equiv="X-UA-Compatible", content="IE=edge")
   title(ng-bind="($route.current.scope.subTitle) ? title + ' - '+ $route.current.scope.subTitle : title") <%= appname %>
