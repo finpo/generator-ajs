@@ -17,12 +17,15 @@
   "main": "app/index.js",
   "repository": "ausir0726/generator-ajs",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "chalk": "~0.4.0",
-    "wiredep": "~1.0.0",
-    "yeoman-generator": "~0.16.0"
+    "wiredep": "~3.0.1",
+    "yeoman-generator": "~0.24.1",
+    "snyk": "^1.25.2"
   },
   "peerDependencies": {
     "generator-karma": ">=0.6.0",
@@ -50,5 +53,6 @@
     {
       "type": "MIT"
     }
-  ]
+  ],
+  "snyk": true
 }
