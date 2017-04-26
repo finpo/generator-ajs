@@ -9,6 +9,12 @@ ignore:
     - yeoman-generator > yeoman-test > yeoman-generator > shelljs:
         reason: None given
         expires: '2017-04-25T15:59:34.629Z'
+    - yeoman-generator > shelljs:
+        reason: None given
+        expires: '2017-05-26T09:27:33.197Z'
+    - yeoman-generator > yeoman-test > yeoman-generator > shelljs:
+        reason: None given
+        expires: '2017-05-26T09:27:33.198Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:minimatch:20160620':
