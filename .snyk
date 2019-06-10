@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.0
+version: v1.12.0
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   'npm:shelljs:20140723':
@@ -24,3 +24,6 @@ patch:
         patched: '2017-03-26T16:01:30.488Z'
     - yeoman-generator > file-utils > minimatch:
         patched: '2017-03-26T16:01:30.488Z'
+  'npm:lodash:20180130':
+    - yeoman-generator > html-wiring > cheerio > lodash:
+        patched: '2018-07-08T06:17:22.353Z'

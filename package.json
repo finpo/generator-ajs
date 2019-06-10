@@ -19,13 +19,14 @@
   "scripts": {
     "test": "mocha",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "npm run snyk-protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "chalk": "~0.4.0",
     "wiredep": "~3.0.1",
     "yeoman-generator": "~0.24.1",
-    "snyk": "^1.29.0"
+    "snyk": "^1.88.2"
   },
   "peerDependencies": {
     "generator-karma": ">=0.6.0",
